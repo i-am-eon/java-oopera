@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Theatre {
+public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -163,9 +163,9 @@ public class Theatre {
                 selectedShow = opera;
                 break;
             default:
-            System.out.println("Неизвестная команда");
+                System.out.println("Неизвестная команда");
                 break;
-            }
+        }
 
         System.out.println("Введите фамилию актера, которого нужно заменить:");
         String surnameToReplace = scanner.nextLine();

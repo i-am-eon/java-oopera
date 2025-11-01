@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MusicalShow extends Show {
+class MusicalShow extends Show {
     Person musicAuthor;
     String librettoText;
 
@@ -33,4 +33,5 @@ public class MusicalShow extends Show {
                 "\nЛибретто: " + librettoText +
                 "\n ";
     }
+
 }

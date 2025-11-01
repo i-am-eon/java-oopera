@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Show {
+class Show {
     String title;
     int duration;
     Director director;
