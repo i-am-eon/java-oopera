@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 class Ballet extends MusicalShow {
-    Person choreographer;
+    private Person choreographer;
 
     public Ballet(String title, int duration, Director director, ArrayList<Actor> listOfActors, Person musicAuthor,
                   String librettoText, Person choreographer) {
@@ -9,15 +9,19 @@ class Ballet extends MusicalShow {
         this.choreographer = choreographer;
     }
 
+    public Person getChoreographer() {
+        return choreographer;
+    }
+
     @Override
     public String toString() {
-        return "Балет: " + title +
-                "\nДлительность: " + duration + " мин" +
-                "\nРежиссер: " + director +
-                "\nАвтор музыки: " + musicAuthor +
-                "\nХореограф: " + choreographer +
-                "\nАктёры: " + listOfActors +
-                "\nЛибретто: " + librettoText +
+        return "Балет: " + getTitle() +
+                "\nДлительность: " + getDuration() + " мин" +
+                "\nРежиссер: " + getDirector() +
+                "\nАвтор музыки: " + getMusicAuthor() +
+                "\nХореограф: " + getChoreographer() +
+                "\nАктёры: " + getListOfActors() +
+                "\nЛибретто: " + getLibrettoText() +
                 "\n ";
     }
 

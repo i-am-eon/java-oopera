@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class MusicalShow extends Show {
-    Person musicAuthor;
-    String librettoText;
+    private Person musicAuthor;
+    private String librettoText;
 
     public MusicalShow(String title, int duration, Director director, ArrayList<Actor> listOfActors,
                        Person musicAuthor, String librettoText) {
@@ -18,19 +18,27 @@ class MusicalShow extends Show {
 
 
     void printAllActor() {
-        for (Actor actor : listOfActors) {
+        for (Actor actor : getListOfActors()) {
             System.out.println(actor.getName() + " " + actor.getSurname() + " (" + actor.getHeight() + " см)");
         }
     }
 
+    public Person getMusicAuthor() {
+        return musicAuthor;
+    }
+
+    public String getLibrettoText() {
+        return librettoText;
+    }
+
     @Override
     public String toString() {
-        return "Музыкальное шоу: " + title +
-                "\nДлительность: " + duration + " мин" +
-                "\nРежиссер: " + director +
-                "\nАвтор музыки: " + musicAuthor +
-                "\nАктёры: " + listOfActors +
-                "\nЛибретто: " + librettoText +
+        return "Музыкальное шоу: " + getTitle() +
+                "\nДлительность: " + getDuration() + " мин" +
+                "\nРежиссер: " + getDirector() +
+                "\nАвтор музыки: " + getMusicAuthor() +
+                "\nАктёры: " + getListOfActors() +
+                "\nЛибретто: " + getLibrettoText() +
                 "\n ";
     }
 
