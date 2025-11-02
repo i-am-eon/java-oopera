@@ -3,15 +3,12 @@ import java.util.Objects;
 class Person {
     private String name;
     private String surname;
+    private Gender gender;
 
-    public enum gender { // Не нашел применение. В ТЗ сказано выводить имя, фамилию и рост актера.
-        MALE,
-        FEMALE
-    }
-
-    public Person(String name, String surname) {
+    public Person(String name, String surname, Gender gender) {
         this.name = name;
         this.surname = surname;
+        this.gender = gender;
     }
 
     public String getName() {
@@ -22,18 +19,21 @@ class Person {
         return surname;
     }
 
+    public Gender getGender() { return gender; }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Person person = (Person) obj;
         return name.equals(person.name) &&
-                surname.equals(person.surname);
+                surname.equals(person.surname) &&
+                gender.equals(person.gender);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname);
+        return Objects.hash(name, surname, gender);
     }
 
     @Override

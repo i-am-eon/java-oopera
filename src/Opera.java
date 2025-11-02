@@ -19,7 +19,7 @@ class Opera extends MusicalShow {
                 "\nДлительность: " + getDuration() + " мин" +
                 "\nРежиссер: " + getDirector() +
                 "\nАвтор музыки: " + getMusicAuthor() +
-                "\nРазмер хора: " + getChoirSize() +
+                "\nРазмер хора: " + getChoirSize() + " чел" +
                 "\nАктёры: " + getListOfActors() +
                 "\nЛибретто: " + getLibrettoText() +
                 "\n ";

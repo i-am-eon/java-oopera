@@ -6,18 +6,19 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Актеры
-        Actor actor1 = new Actor("Владислав", "Васильев", 190);
-        Actor actor2 = new Actor("Марта", "Матвеева", 174);
-        Actor actor3 = new Actor("Евгения", "Мельникова", 181);
+        // Актеры;
+        // Представленным ниже людям указал гендер. При добавлении нового человека гендер будет по умолчанию "UNKNOWN"
+        Actor actor1 = new Actor("Владислав", "Васильев", Gender.MALE, 190);
+        Actor actor2 = new Actor("Марта", "Матвеева", Gender.FEMALE, 174);
+        Actor actor3 = new Actor("Евгения", "Мельникова", Gender.FEMALE, 181);
 
         // Режиссеры
-        Director director1 = new Director("Максим", "Выприцкий", 2);
-        Director director2 = new Director("Полина", "Симахина", 1);
+        Director director1 = new Director("Максим", "Выприцкий", Gender.MALE, 2);
+        Director director2 = new Director("Полина", "Симахина", Gender.FEMALE, 1);
 
         // Прочие сотрудники
-        Person choreographer = new Person("Дарья", "Белобородова");
-        Person musicAuthor = new Person("Денис", "Алешин");
+        Person choreographer = new Person("Дарья", "Белобородова", Gender.FEMALE);
+        Person musicAuthor = new Person("Денис", "Алешин", Gender.MALE);
 
         // Изначальный список актеров театра
         ArrayList<Actor> allActors = new ArrayList<>();
@@ -101,7 +102,7 @@ public class Main {
         int height = scanner.nextInt();
         scanner.nextLine();
 
-        Actor newActor = new Actor(name, surname, height);
+        Actor newActor = new Actor(name, surname, Gender.UNKNOWN, height); // Гендер по умолчанию не определен
 
         if (allActors.contains(newActor)) {
             System.out.println("Этот актер уже есть в общем списке");
@@ -180,7 +181,7 @@ public class Main {
         int newHeight = scanner.nextInt();
         scanner.nextLine();
 
-        Actor newActor = new Actor(newName, newSurname, newHeight);
+        Actor newActor = new Actor(newName, newSurname, Gender.UNKNOWN, newHeight); // Гендер по умолчанию не определен
 
         assert selectedShow != null;
         selectedShow.actorReplacement(surnameToReplace, newActor);
